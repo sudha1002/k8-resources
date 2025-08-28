@@ -1,9 +1,9 @@
-apiversion: v1
-kind: pod
+apiVersion: v1
+kind: Pod
 metadata:
-  name: nginx #pod name our like
+  name: nginx
 spec:
-  # one pod can contain multiple containers
-  containers:  
-  - name: nginx   #container name our like
+  containers:
+  - name: nginx
     image: nginx
+    
