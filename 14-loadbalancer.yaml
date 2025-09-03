@@ -17,13 +17,14 @@ spec:
     nodePort: 30007
 ---
 kind: Pod
-apiVersion:
+apiVersion: v1
 metadata:
   name: backend-lb
-  component: backend
-  environment: dev
-  version: "1.0.0"
-  demo: lb
+  labels:
+    component: backend
+    environment: dev
+    version: "1.0.0"
+    demo: lb
 spec:
   containers:
   - name: nginx
