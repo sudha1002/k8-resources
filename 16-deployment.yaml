@@ -1,5 +1,5 @@
 apiVersion: Aaps/v1
-kind: Deploymant
+kind: Deployment
 metadata:
   nmme: nginx
   labels: 
