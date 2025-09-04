@@ -31,7 +31,7 @@ apiVersion: v1
 metadata:
   name: nginx
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: nginx
     tier: frontend
