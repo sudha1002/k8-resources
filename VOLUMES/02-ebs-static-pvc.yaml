@@ -16,11 +16,11 @@ kind: Pod
 metadata:
   name: app
 spec:
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1a  
   containers:
   - name: app
     image: nginx
-  nodeSelector:
-    topology.kubernetes.io/zone: us-east-1a  
     volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html
