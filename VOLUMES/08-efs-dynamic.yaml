@@ -5,7 +5,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: efs-sc
+  storageClassName: "efs-expense"
   resources:
     requests:
       storage: 5Gi
@@ -13,7 +13,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: efs-app
+  name: efs-nginx
   labels:
     purpose: efs-dynamic-demo
 spec:
