@@ -19,6 +19,8 @@ spec:
   containers:
   - name: app
     image: nginx
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1a  
     volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html
