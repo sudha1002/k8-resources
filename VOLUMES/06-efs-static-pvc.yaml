@@ -29,7 +29,7 @@ spec:
     persistentVolumeClaim:
       claimName: efs-claim 
 ---
- ind: Service
+kind: Service
 apiVersion: v1
 metadata:
   name: nginx-lb
