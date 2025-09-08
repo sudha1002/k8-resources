@@ -16,7 +16,7 @@ kind: Pod
 metadata:
   name: efs-nginx
   labels: 
-    purpose: efs-demo
+    purpose: efs-dynamic-demo
 spec:
   containers:
   - name: nginx
@@ -29,14 +29,16 @@ spec:
     persistentVolumeClaim:
       claimName: efs-claim 
 ---
-kind: Service
+ ind: Service
 apiVersion: v1
 metadata:
-  name: nginx
+  name: nginx-lb
 spec:
-  selector: #labels are used as selectors
-    purpose: efs-demo
+  type: LoadBalancer
+  selector:
+    purpose: ebs-dynamic-demo
   ports:
   - protocol: TCP
-    port: 80 #service port port exposed inside the cluster, Port exposed by the Service (what clients see).
-    targetPort: 80            
+    port: 80
+    targetPort: 80
+    nodePort: 30007            
