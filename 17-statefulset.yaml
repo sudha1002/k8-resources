@@ -13,6 +13,7 @@ spec:
   selector:
     app: nginx
     demo: statefulset
+    
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -22,7 +23,7 @@ spec:
   selector:
     matchLabels:
       app: nginx # has to match .spec.template.metadata.labels
-      demo: ststefulset
+      demo: statefulset
   serviceName: "nginx-headless"
   replicas: 3 # by default is 1
   minReadySeconds: 10 # by default is 0
