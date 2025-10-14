@@ -13,15 +13,15 @@ spec:
     volumeMounts:
     - mountPath: /secrets
       name: secret-volume
-  volumes:
-  - name: secret-volume
-    emptyDir: {}
   containers:
   - name: nginx
     image: nginx
     volumeMounts:
     - mountPath: /secrets
       name: secret-volume
+  volumes:
+  - name: secret-volume
+    emptyDir: {}    
   
         
     
