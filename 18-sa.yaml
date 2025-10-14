@@ -9,7 +9,7 @@ ServiceAccount: expense-mysql-secret
   - name: aws-cli
     image: amazon/aws-cli
     command: ['sh', '-c', 'aws secretsmanager get-secret-value \
-    --secret-id expense/mysql/creds --query SecretString --output text > /secrets/.env ']
+    --secret-id expense/mysql/creds --query SecretString --output text > /secrets/.env']
     volumeMounts:
     - mountPath: /secrets
       name: secret-volume
