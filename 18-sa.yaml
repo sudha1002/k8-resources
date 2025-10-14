@@ -5,12 +5,6 @@ metadata:
   namespace: expense
 spec:
 ServiceAccount: expense-mysql-secret
-  containers:
-  - name: nginx
-    image: nginx
-    volumeMounts:
-    - mountPath: /secrets
-      name: secret-volume
   initContainers:
   - name: aws-cli
     image: amazon/aws-cli
@@ -22,5 +16,12 @@ ServiceAccount: expense-mysql-secret
   volumes:
   - name: secret-volume
     emptyDir: {}
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - mountPath: /secrets
+      name: secret-volume
+  
         
     
