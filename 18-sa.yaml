@@ -19,7 +19,7 @@ subjects:
 # You can specify more than one "subject"
 - kind: ServiceAccount
   name: expense-secret  # "name" is case sensitive
-  nmaespace: expense
+  namespace: expense
 roleRef:
   # "roleRef" specifies the binding to a Role / ClusterRole
   kind: Role #this must be Role or ClusterRole
